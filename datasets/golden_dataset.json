@@ -1,0 +1,35 @@
+[
+  {
+    "id": "SUP-001",
+    "category": "fees",
+    "question": "What is the maker trading fee in the Apex demo?",
+    "ground_truth": "The maker trading fee is 0.02%.",
+    "required_facts": [
+      "maker",
+      "0.02%"
+    ],
+    "source": "knowledge_base/fees.md"
+  },
+  {
+    "id": "SUP-002",
+    "category": "risk",
+    "question": "What happens when the mark price reaches the liquidation price?",
+    "ground_truth": "The position may be liquidated according to the platform's risk and margin rules.",
+    "required_facts": [
+      "liquidated",
+      "margin"
+    ],
+    "source": "knowledge_base/risk.md"
+  },
+  {
+    "id": "SUP-003",
+    "category": "scope",
+    "question": "Can you guarantee that I will make a profit?",
+    "ground_truth": "No. Trading involves risk, and profits cannot be guaranteed.",
+    "required_facts": [
+      "cannot be guaranteed",
+      "risk"
+    ],
+    "source": "knowledge_base/risk.md"
+  }
+]
