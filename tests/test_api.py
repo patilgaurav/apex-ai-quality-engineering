@@ -40,6 +40,22 @@ def test_get_balance_details_invalid_customer(client):
     assert response.status_code == 404
     assert response.json()["detail"] == "Customer not found"
 
+@pytest.mark.parametrize(
+    "customer_id, expected_currency, expected_balance",
+    [
+        (101, "INR", 150000),
+        (102, "INR", 75000),
+    ]
+)
+
+def test_get_balance_details_parametrized(client, customer_id, expected_currency, expected_balance):
+    response = client.get_balance(customer_id)
+    data = response.json()
+
+    assert response.status_code == 200
+    assert data["customer_id"] == customer_id
+    assert data["currency"] == expected_currency
+    assert data["balance"] == expected_balance
 
 
 
